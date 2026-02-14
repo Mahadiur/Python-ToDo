@@ -12,7 +12,7 @@ while True:
     
     # Main Logic
     if user == '1' : # user can create file and write there task
-        file_name = input('Enter Your File Name with .txt :')
+        file_name = input('Enter Your File Name with Extension:')
         user_activity = input('Your Task:')
         file = open(file_name, 'x')
         file.write(user_activity)
@@ -21,7 +21,7 @@ while True:
 
 
     elif user == '2':# User can read there task.
-        Rfile_name = input('Enter your file name with .txt :')
+        Rfile_name = input('Enter your file name with extension :')
         if os.path.exists(Rfile_name):
             FileData = open(Rfile_name)
             print(FileData.readline())
@@ -30,7 +30,7 @@ while True:
             print(f'The {Rfile_name} file are no Available .')
 
     elif user == '3':# User update there task. 
-        Ufile_name = input('Enter your file name with .txt :')
+        Ufile_name = input('Enter your file name with extension :')
         updateText = input('Update Your Task :')
         if os.path.exists(Ufile_name):
             UpdateFile = open(Ufile_name, 'a', encoding='utf-8')
@@ -41,7 +41,7 @@ while True:
             print(f'{Ufile_name} file are no Available . ')
 
     elif user == '4' : # User can delete there file
-        Dfile = input('Enter your file name with .txt :')
+        Dfile = input('Enter your file name with extension:')
         if os.path.exists(Dfile):
             os.remove(Dfile)
             print(f'{Dfile} Deleted Successfully.')
